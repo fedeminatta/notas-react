@@ -51,13 +51,7 @@ const Main = ({
 								nota.titulo.includes(search) ||
 								nota.descripcion.includes(search)
 						)
-						.map((nota) => (
-							<Note
-								titulo={nota.titulo}
-								descripcion={nota.descripcion}
-								key={nota.key}
-							/>
-						))
+						.map((nota) => <Note nota={nota} key={nota.key} />)
 				: misNotas.map((nota) => (
 						<Note
 							key={nota.key}
