@@ -16,7 +16,7 @@ const App = () => {
 
 	useEffect(() => {
 		localStorage.setItem('nota', JSON.stringify(misNotas));
-	}, [form]);
+	}, [misNotas]);
 
 	return (
 		<div className="container">

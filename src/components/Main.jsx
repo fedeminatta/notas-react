@@ -11,6 +11,11 @@ const Main = ({
 	misNotas,
 	search,
 }) => {
+	const eliminarNota = (id) => {
+		let confirmar = window.confirm('¿Desea ELIMINAR esta nota?');
+		confirmar &&
+			setMisNotas(misNotas.filter((prevNota) => prevNota.key != id));
+	};
 	return (
 		<main>
 			{misNotas != '' ? <h2>Tus Notas</h2> : <h2>Agrega Notas</h2>}
@@ -45,6 +50,8 @@ const Main = ({
 							titulo={nota.titulo}
 							descripcion={nota.descripcion}
 							key={nota.key}
+							id={nota.key}
+							eliminarNota={eliminarNota}
 						/>
 				  ))}
 		</main>
