@@ -1,6 +1,8 @@
+import styles from './sass/Header.module.sass';
+
 const Header = ({ search, setSearch }) => {
 	return (
-		<header>
+		<header className={styles.header}>
 			<input
 				type="search"
 				placeholder="🔍 buscar"

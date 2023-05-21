@@ -1,7 +1,9 @@
+import styles from './sass/NewNote.module.sass';
+
 const NewNote = ({ setForm }) => {
 	return (
-		<div className="new-note">
-			<div className="add" onClick={() => setForm(true)}>
+		<div className={styles.newNote}>
+			<div className={styles.add} onClick={() => setForm(true)}>
 				+
 			</div>
 		</div>

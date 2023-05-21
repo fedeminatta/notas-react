@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
+import './App.sass';
 import Header from './components/Header';
 import Main from './components/Main';
 import NewNote from './components/NewNote';
-import './App.sass';
 
 const App = () => {
 	const [form, setForm] = useState(false);

@@ -1,3 +1,5 @@
+import styles from './sass/Form.module.sass';
+
 const Form = ({
 	setForm,
 	titulo,
@@ -28,7 +30,7 @@ const Form = ({
 	};
 
 	return (
-		<form onSubmit={(e) => handleSubmit(e)}>
+		<form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
 			<h2>Agrega tu Nota</h2>
 			<input
 				type="text"

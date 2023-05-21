@@ -1,3 +1,4 @@
+import styles from './sass/Main.module.sass';
 import Form from './Form';
 import Note from './Note';
 const Main = ({
@@ -17,7 +18,7 @@ const Main = ({
 			setMisNotas(misNotas.filter((prevNota) => prevNota.key != id));
 	};
 	return (
-		<main>
+		<main className={styles.main}>
 			{misNotas != '' ? <h2>Tus Notas</h2> : <h2>Agrega Notas</h2>}
 			{form && (
 				<Form
