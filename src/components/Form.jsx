@@ -8,21 +8,31 @@ const Form = ({
 	setDescripcion,
 	setMisNotas,
 	misNotas,
+	setNotaEditada,
+	notaEditada,
 }) => {
-	const notaObj = () => {
-		setMisNotas([
-			...misNotas,
-			{
-				titulo,
-				descripcion,
-				key: Math.random() * 30,
-			},
-		]);
-	};
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		notaObj();
+
+		const notaObj = {
+			titulo,
+			descripcion,
+		};
+
+		if (notaEditada.key) {
+			notaObj.key = notaEditada.key;
+
+			const notasActualizadas = misNotas.map((notaState) =>
+				notaState.key === notaEditada.key ? notaObj : notaState
+			);
+
+			setMisNotas(notasActualizadas);
+			setNotaEditada({});
+		} else {
+			notaObj.key = Math.random() * 30;
+			setMisNotas([...misNotas, notaObj]);
+		}
+
 		setTitulo('');
 		setDescripcion('');
 

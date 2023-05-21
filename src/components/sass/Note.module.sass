@@ -1,16 +1,17 @@
+$darkTone: #424250
+
 .nota
-    background: #e7e7e7
+    background: #d0d0ed
     display: inline-block
     padding: 15px
     width: 200px
     margin: 20px 0
     border-radius: 7px
-    border-left: 7px solid #edca00
+    border-left: 7px solid $darkTone
     color: #000
     h3
         font-weight: 600
-        color: #edca00
-        text-shadow: -1px 1px #342e00
+        color: #2c2c34
         margin-bottom: 6px
         text-transform: uppercase
     button
@@ -22,12 +23,13 @@
         cursor: pointer
         border-radius: 2px
         transition: box-shadow .2s
+        background: none
     .edit
-        box-shadow: -3px 2px #178900
+        box-shadow: -3px 2px $darkTone
         &:hover
-            box-shadow: -2px 1px #178900
+            box-shadow: -2px 1px $darkTone
 
     .delete
-        box-shadow: -3px 2px #9e0000
+        box-shadow: -3px 2px $darkTone
         &:hover
-            box-shadow: -2px 1px #9e0000
+            box-shadow: -2px 1px $darkTone

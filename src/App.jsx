@@ -9,6 +9,7 @@ const App = () => {
 	const [titulo, setTitulo] = useState('');
 	const [descripcion, setDescripcion] = useState('');
 	const [search, setSearch] = useState('');
+	const [notaEditada, setNotaEditada] = useState({});
 
 	const [misNotas, setMisNotas] = useState(
 		JSON.parse(localStorage.getItem('nota')) ?? []
@@ -31,6 +32,8 @@ const App = () => {
 				setMisNotas={setMisNotas}
 				misNotas={misNotas}
 				search={search}
+				setNotaEditada={setNotaEditada}
+				notaEditada={notaEditada}
 			/>
 			<NewNote setForm={setForm} />
 		</div>

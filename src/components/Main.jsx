@@ -11,12 +11,22 @@ const Main = ({
 	setMisNotas,
 	misNotas,
 	search,
+	setNotaEditada,
+	notaEditada,
 }) => {
 	const eliminarNota = (id) => {
 		let confirmar = window.confirm('¿Desea ELIMINAR esta nota?');
 		confirmar &&
 			setMisNotas(misNotas.filter((prevNota) => prevNota.key != id));
 	};
+
+	const editarNota = (notaEditar) => {
+		setForm(true);
+		setTitulo(notaEditar.titulo);
+		setDescripcion(notaEditar.descripcion);
+		setNotaEditada(notaEditar);
+	};
+
 	return (
 		<main className={styles.main}>
 			{misNotas != '' ? <h2>Tus Notas</h2> : <h2>Agrega Notas</h2>}
@@ -29,6 +39,8 @@ const Main = ({
 					setDescripcion={setDescripcion}
 					setMisNotas={setMisNotas}
 					misNotas={misNotas}
+					setNotaEditada={setNotaEditada}
+					notaEditada={notaEditada}
 				/>
 			)}
 
@@ -48,11 +60,10 @@ const Main = ({
 						))
 				: misNotas.map((nota) => (
 						<Note
-							titulo={nota.titulo}
-							descripcion={nota.descripcion}
 							key={nota.key}
-							id={nota.key}
 							eliminarNota={eliminarNota}
+							editarNota={editarNota}
+							nota={nota}
 						/>
 				  ))}
 		</main>
