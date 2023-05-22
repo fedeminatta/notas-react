@@ -41,7 +41,7 @@ const Form = ({
 
 	return (
 		<form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-			<h2>Agrega tu Nota</h2>
+			<h2>{notaEditada.key ? 'Edita tu nota' : 'Agrega tu nota'} </h2>
 			<input
 				type="text"
 				placeholder="Titulo"
@@ -53,7 +53,12 @@ const Form = ({
 				value={descripcion}
 				onChange={(e) => setDescripcion(e.target.value)}
 			/>
-			<button type="submit">Agregar</button>
+			<button type="submit">
+				{notaEditada.key ? 'Editar' : 'Agregar'}{' '}
+			</button>
+			<button type="button" onClick={() => setForm(false)}>
+				Cancelar
+			</button>
 		</form>
 	);
 };

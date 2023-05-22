@@ -48,8 +48,8 @@ const Main = ({
 				? misNotas
 						.filter(
 							(nota) =>
-								nota.titulo.includes(search) ||
-								nota.descripcion.includes(search)
+								nota.titulo.toLowerCase().includes(search) ||
+								nota.descripcion.toLowerCase().includes(search)
 						)
 						.map((nota) => <Note nota={nota} key={nota.key} />)
 				: misNotas.map((nota) => (
