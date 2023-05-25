@@ -14,7 +14,7 @@ const Note = ({
 
 	return (
 		<div
-			className={styles.nota}
+			className={styles.box}
 			style={{
 				borderLeftColor: primaryColor,
 				background: secondaryColor,

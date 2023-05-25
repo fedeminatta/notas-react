@@ -12,12 +12,29 @@ const App = () => {
 	const [search, setSearch] = useState('');
 	const [notaEditada, setNotaEditada] = useState({});
 
+	const [primaryColor, setPrimaryColor] = useState(
+		localStorage.getItem('primaryColor') ?? '#A71D31'
+	);
+	const [secondaryColor, setSecondaryColor] = useState(
+		localStorage.getItem('secondaryColor') ?? '#fed7dd'
+	);
+
 	const [misNotas, setMisNotas] = useState(
 		JSON.parse(localStorage.getItem('nota')) ?? []
 	);
 
-	const [primaryColor, setPrimaryColor] = useState('#A71D31');
-	const [secondaryColor, setSecondaryColor] = useState('#fed7dd');
+	// LS colores
+	useEffect(() => {
+		localStorage.setItem('primaryColor', primaryColor);
+	}, [primaryColor]);
+	useEffect(() => {
+		localStorage.setItem('secondaryColor', secondaryColor);
+	}, [secondaryColor]);
+
+	// LS Notas
+	useEffect(() => {
+		localStorage.setItem('nota', JSON.stringify(misNotas));
+	}, [misNotas]);
 
 	const Button = styled.button`
 		box-shadow: -2px 1px ${primaryColor};
@@ -29,13 +46,15 @@ const App = () => {
 		}
 	`;
 
-	useEffect(() => {
-		localStorage.setItem('nota', JSON.stringify(misNotas));
-	}, [misNotas]);
-
 	return (
 		<div className="container">
-			<Header search={search} setSearch={setSearch} Button={Button} />
+			<Header
+				search={search}
+				setSearch={setSearch}
+				Button={Button}
+				setPrimaryColor={setPrimaryColor}
+				setSecondaryColor={setSecondaryColor}
+			/>
 			<Main
 				form={form}
 				setForm={setForm}

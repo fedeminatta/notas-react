@@ -1,6 +1,4 @@
 import styles from './sass/Main.module.sass';
-import styled from 'styled-components';
-import { useState } from 'react';
 import Form from './Form';
 import Note from './Note';
 const Main = ({
@@ -53,10 +51,24 @@ const Main = ({
 				? misNotas
 						.filter(
 							(nota) =>
-								nota.titulo.toLowerCase().includes(search) ||
-								nota.descripcion.toLowerCase().includes(search)
+								nota.titulo
+									.toLowerCase()
+									.includes(search.toLowerCase()) ||
+								nota.descripcion
+									.toLowerCase()
+									.includes(search.toLowerCase())
 						)
-						.map((nota) => <Note nota={nota} key={nota.key} />)
+						.map((nota) => (
+							<Note
+								key={nota.key}
+								eliminarNota={eliminarNota}
+								editarNota={editarNota}
+								nota={nota}
+								primaryColor={primaryColor}
+								secondaryColor={secondaryColor}
+								Button={Button}
+							/>
+						))
 				: misNotas.map((nota) => (
 						<Note
 							key={nota.key}
