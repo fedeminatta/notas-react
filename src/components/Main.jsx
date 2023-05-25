@@ -32,7 +32,11 @@ const Main = ({
 
 	return (
 		<main className={styles.main}>
-			{misNotas != '' ? <h2>Tus Notas</h2> : <h2>Agrega Notas</h2>}
+			{misNotas != '' ? (
+				<h2>Tus Notas</h2>
+			) : (
+				<h2>Agrega Tu Primer Nota</h2>
+			)}
 			{form && (
 				<Form
 					setForm={setForm}
