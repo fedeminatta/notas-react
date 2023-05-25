@@ -1,13 +1,13 @@
-$darkTone: #424250
-
 .nota
-    background: #d0d0ed
-    display: inline-block
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
     padding: 15px
     width: 200px
+    height: auto
     margin: 20px 0
     border-radius: 7px
-    border-left: 7px solid $darkTone
+    border-left: 7px solid
     color: #000
     img
         width: 15px
@@ -19,19 +19,8 @@ $darkTone: #424250
     button
         color: #000
         padding: 3px 8px
-        border: none
         margin-right: 8px
         margin-top: 10px
         cursor: pointer
         border-radius: 2px
-        transition: box-shadow .2s
-        background: none
-    .edit
-        box-shadow: -3px 2px $darkTone
-        &:hover
-            box-shadow: -2px 1px $darkTone
-
-    .delete
-        box-shadow: -3px 2px $darkTone
-        &:hover
-            box-shadow: -2px 1px $darkTone
+        transition: box-shadow .2s, transform .2s

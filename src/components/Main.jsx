@@ -1,4 +1,6 @@
 import styles from './sass/Main.module.sass';
+import styled from 'styled-components';
+import { useState } from 'react';
 import Form from './Form';
 import Note from './Note';
 const Main = ({
@@ -13,6 +15,9 @@ const Main = ({
 	search,
 	setNotaEditada,
 	notaEditada,
+	primaryColor,
+	secondaryColor,
+	Button,
 }) => {
 	const eliminarNota = (id) => {
 		let confirmar = window.confirm('¿Desea ELIMINAR esta nota?');
@@ -58,6 +63,9 @@ const Main = ({
 							eliminarNota={eliminarNota}
 							editarNota={editarNota}
 							nota={nota}
+							primaryColor={primaryColor}
+							secondaryColor={secondaryColor}
+							Button={Button}
 						/>
 				  ))}
 		</main>
