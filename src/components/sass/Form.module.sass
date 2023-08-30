@@ -4,15 +4,17 @@
     top: 50%
     transform: translate(-50%, -50%)
     padding: 20px
-    background: #0e2b38
     border-radius: 7px
-    box-shadow: -2px 2px rgb(10, 117, 167)
     display: flex
     flex-direction: column
     width: 500px
     max-width: 95%
     gap: 20px
     z-index: 10000
+    h3
+        text-transform: uppercase
+        text-align: center
+        font-size: 22px
     input, textarea
         max-width: 100%
         display: block
@@ -21,21 +23,22 @@
         resize: none
         width: 90%
         padding: 8px
+        border: none
+        border-radius: 4px
+        &::placeholder
+            color: #f5f5f5
     textarea
         height: 100px
     button
         width: 150px
         max-width: 95%
         margin: 0 auto
-        background-color: #fff
         border: none
-        color: rgb(10, 117, 167)
         text-transform: uppercase
         font-weight: 600
         padding: 4px
         border-radius: 3px
         cursor: pointer
-        transition: background .3s
-        &:hover
-            background-color: rgb(10, 117, 167)
-            color: #fff
+        transition: transform .3s
+        &:hover, &:active
+            transform: scale(1.1)
